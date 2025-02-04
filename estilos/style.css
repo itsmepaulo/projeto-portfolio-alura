@@ -56,7 +56,7 @@
     }
 
     main.apresentacao{
-        display: flex; /* por padrão o flex-direction é row*/
+        display: flex; 
         flex-direction: row;
         align-items: center;
         justify-content:space-between;
@@ -65,31 +65,41 @@
     }
 
     .conteudo{
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 30px; /*espaçamento entre os itens*/
+        gap: 30px; 
     }
 
-    .conteudo > h1{
+    .conteudo__container{
+        gap: 20px;
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        align-items: center;
+    }
+
+    .descricao__titulo{
         color: var(--cor-secundaria);
         font-size: 2.25rem;
         font-family: var(--fonte-titulo);
     }
 
-    .conteudo > h1 > .destaque{
+    .destaque{
         color: var(--cor-terciaria);
     }   
 
 
-    .conteudo > p{
+    .descricao__texto{
         font-family: var(--fonte-conteudo);
         font-weight: 400;
         line-height: 24px;
-        size: 24px;
+        font-size: 1rem;
         background-color: var(--cor-primaria);
         color: var(--cor-secundaria);
     }
+
+
 
     .links{
         display: flex;
@@ -133,10 +143,9 @@
 
 
 
-    .paulo{
-        width: 50%; /* Essa porcentagem é aplicada na imagem como parâmetro a tag pai, que no caso é a main*/
-        
-        border-radius: 14px;
+    .conteudo__img{
+        width: 35%; /* Essa porcentagem é aplicada na imagem como parâmetro a tag pai, que no caso é a main*/
+        border-radius: 100%;
         border: 4px solid var(--cor-terciaria);
     }
 
@@ -156,29 +165,136 @@
 
     @media (max-width:1200px) {
 
-        body{
-            width: 96.5vw;
-
-        }
         header{
-            padding: 10%;
+            padding: 3% 5%;
+    
         }
-
+    
         .navegacao{
-            justify-content: center;
-
+            display: flex;
+            gap: 30px;
+            
         }
-
+    
+    
+        .navegacao > a{
+            color: var(--cor-terciaria);
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-family: var(--fonte-conteudo);
+            font-weight: 600;
+    
+        }
+    
+        .navegacao a:hover{
+            color: var(--cor-secundaria);
+            transition: 0.8s ;
+        }
+    
         main.apresentacao{
-            flex-direction: column-reverse; /* a imagem ao invés de ser o ultimo parâmetro, em cima do conteúdo*/
-            padding: 3%; 
+            display: flex; 
+            flex-direction: row;
+            align-items: center;
+            justify-content:space-between;
+            padding: 5%;
+            gap: 82px;
         }
-
-        
+    
         .conteudo{
-            width: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px; 
         }
-
-        
+    
+        .conteudo__container{
+            gap: 20px;
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            align-items: center;
+        }
+    
+        .descricao__titulo{
+            color: var(--cor-secundaria);
+            font-size: 2.25rem;
+            font-family: var(--fonte-titulo);
+        }
+    
+        .destaque{
+            color: var(--cor-terciaria);
+        }   
+    
+    
+        .descricao__texto{
+            font-family: var(--fonte-conteudo);
+            font-weight: 400;
+            line-height: 24px;
+            size: 24px;
+            background-color: var(--cor-primaria);
+            color: var(--cor-secundaria);
+        }
+    
+        .links{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column; /* Por padrão ao inserir o display flex, o flex-direction vem como row */
+            align-items: center;  /*como alteramos o fflex direction para colunas (vertical), a tag align items também é alterada, sendo assim posicionando os itens verticalmente*/
+            gap: 20px;
+            
+        }
+    
+        .links > h2{
+            color: var(--cor-secundaria);
+            text-align: center;
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+    
+        }
+    
+        .redes{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            width: 50%;
+            padding: 21.5px 0;
+            border-radius: 8px;
+            border: 3px solid var(--cor-secundaria);
+            size: 24px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--cor-secundaria);
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+    
+        .redes:hover{
+            color: var(--cor-terciaria);
+            transition: 0.8s;
+        }
+    
+    
+    
+    
+        .conteudo__img{
+            width: 35%; /* Essa porcentagem é aplicada na imagem como parâmetro a tag pai, que no caso é a main*/
+            border-radius: 100%;
+            border: 4px solid var(--cor-terciaria);
+        }
+    
+        footer{
+            padding: 10px 30px;
+            text-align: center;
+            background-color: var(--cor-terciaria);
+            font-family: var(--fonte-conteudo);
+            font-weight: bold;
+            
+        }
+    
+        footer > p > a{
+            text-decoration: none;
+            color: var(--cor-primaria);
+        }
 
     }
